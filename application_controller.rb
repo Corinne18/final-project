@@ -17,7 +17,6 @@ class MyApp < Sinatra::Base
    # @results =  client.character(user_input)
     @results1 = client.characters(:name => "#{user_input}")
     
-    
     @results2 = @results1['data']['results'][0].first[1]
   
     @results = client.character(@results2)
@@ -36,17 +35,15 @@ class MyApp < Sinatra::Base
     
     @name = @results['data']['results'][0]['name']
     @desc = @results['data']['results'][0]['description']
+   
+   @initpic =  @results['data']['results'][0]['thumbnail']
+   
     
-    #def pic
-    #if @results['data']['results'][0]['thumbnail']['path'] == nil     
-    #@pic = "http://i60.tinypic.com/2z50shh.gif"
-        
-  #else 
-   @pic = @results['data']['results'][0]['thumbnail']['path'] + "/portrait_xlarge.jpg"
-     
-        
-    #end
-    #end
+    if @initpic== nil 
+    @pic = "http://i60.tinypic.com/2z50shh.gif"   
+  else 
+   @pic = @results['data']['results'][0]['thumbnail']['path']+ "/portrait_xlarge.jpg"
+    end
     
     
     @events = @results['data']['results'][0]['events']['items']

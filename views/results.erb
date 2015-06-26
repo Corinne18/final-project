@@ -1,0 +1,191 @@
+<head>
+   <title>Moogle</title>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Tinos' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+<style>
+  img {
+    border: 1px purple dotted;
+    border-radius: 3px;
+
+    display: inline;
+    
+  }
+  
+  h4 {
+    display: inline;
+  } 
+   h3 {
+    display: inline;
+     
+  } 
+  h1 {
+    display:inline;
+    color: purple;
+    font-family: 'Quicksand', sans-serif;
+    
+  }
+  h2 {
+    display:inline;
+    font-family: 'Pontano Sans', sans-serif;
+ 
+  }
+
+  body {
+    background-color: #F0FFFF;
+  }
+  
+  #desc {
+ 
+    float: left;
+    width: 300px;
+    
+  }
+  
+  #eventlist {
+    position: relative;
+    float: right;
+  }
+  
+  
+  body 
+{ margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#header {
+  left: 20px;
+  height: 20px;
+}
+#left {
+  position: relative;
+  left: 15px;
+  width: 200px;
+  padding-top: 5px;
+  font-family: 'Pontano Sans', sans-serif;
+  clear: both;
+  display: block;
+  height: auto;
+  
+}
+  
+  
+#center {
+  top: 50px;
+  margin-left: 240px;
+  float: right;
+  margin-right: auto;
+    position: fixed;
+  display: block;
+}
+  #under {
+    float:left;
+    margin-right: 40%;
+    margin-left: 15px;
+    padding-top: 0px;
+    font-family: 'Pontano Sans', sans-serif;
+    clear: both;
+    width: 227px;
+   
+   }
+  a {
+    font-family: 'Pontano Sans', sans-serif;
+    font-size: 15pt;
+     text-decoration: none;
+  }
+  /*------------------------------------------------*/
+  #container-top-right {
+    /*don't change anything*/
+    position:fixed;
+    z-index:999;
+    right:0px;
+    top:0px;
+   
+   
+    /*transition speed: 0.1 = fastest and 1 = slowest*/
+    -webkit-transition: all .7s ease-in-out;
+    -moz-transition: all .7s ease-in-out;
+    -o-transition: all .7s ease-in-out;
+}
+ 
+    #container-top-right:hover {
+        top:50px; /*WHAT YOU WILL NEED TO CHANGE ACCORDING TO HOW MANY LINES OF TEXT YOU HAVE (higher number for more text)*/
+       
+        /*transition speed: 0.1 = fastest and 1 = slowest*/
+        -webkit-transition: all .7s ease-in-out;
+        -moz-transition: all .7s ease-in-out;
+        -o-transition: all .7s ease-in-out;
+    }
+ 
+#text-top-right {
+    font-size:10px;
+    font-family:calibri;
+    text-align:center;
+    width:100px; /*should match the image width*/
+    right:10px; /*should match the image margin*/
+   
+    /*don't change anything below this*/
+    padding:0px 0px 10px 0px;
+    position:absolute;
+    bottom:0px;
+}
+ 
+#image-top-right img {
+    width: 100px; /*should match the text width*/
+    right:10px; /*should match the text margin*/
+   
+    /*don't change anything below this*/
+    height: auto;
+    position:absolute;
+
+  
+</style>
+</head>
+<body>
+
+    
+    <div class="header">
+    <h1> &nbsp;Info:</h1> <h2>  <%= @name %></h2>
+    </div>
+
+  <div id="left">
+    
+    <h4><%= @desc %></h4>
+    </div>
+
+    <div id="center">
+        <img src="<%= @pic %>"/> 
+     
+      
+      </div>
+  </div>
+ 
+        <div id = "under"><br>
+ 
+          <u><h3>Featured in:</h3></u>
+          <br>
+          <h4><%= @indi_event %> </h4>
+          <br><br>
+          <u><h3>Available Comics With This </h3>
+            <br>
+            <h3>Character:</h3></u>
+          <br>
+          <h4><%= @comics_with %> </h4>
+  </div>
+          <div id="container-top-right">
+<div id="image-top-right"><img src="http://fc07.deviantart.net/fs34/f/2008/291/6/0/Marvel_Comics_Logo_by_stacalkas.jpg" /></div>
+<div id="text-top-right">
+   <a class="home" href="/">Go Home</a>
+</div>
+</div>
+
+
+ 
+</body>
